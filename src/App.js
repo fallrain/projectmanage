@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
 import './App.css';
 
@@ -17,9 +18,13 @@ class App extends Component {
             <Menu
               mode="inline"
               defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
+              defaultOpenKeys={['sub0']}
               style={{height: '100%', borderRight: 0}}
             >
+              <SubMenu key="sub0" title={<span><Icon type="system"/>系统管理</span>}>
+                <Menu.Item key="1">部门管理</Menu.Item>
+                <Menu.Item key="2">账户管理</Menu.Item>
+              </SubMenu>
               <SubMenu key="sub1" title={<span><Icon type="user"/>项目实施管理</span>}>
                 <Menu.Item key="1">保函保证金</Menu.Item>
                 <Menu.Item key="2">未回款查询</Menu.Item>
@@ -49,7 +54,9 @@ class App extends Component {
               <Breadcrumb.Item>变更详情</Breadcrumb.Item>
             </Breadcrumb>
             <Content style={{background: '#fff', padding: 24, margin: 0, minHeight: 280}}>
-              Content
+              <BrowserRouter>
+
+              </BrowserRouter>
             </Content>
           </Layout>
         </Layout>
